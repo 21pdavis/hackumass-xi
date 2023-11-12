@@ -33,6 +33,7 @@ public class GameManager : MonoBehaviour
 
     public void TransitionState(GameState to)
     {
+        Debug.Log($"Transitioning to state '{to}'");
 
         switch (to)
         {
