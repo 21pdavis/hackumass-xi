@@ -7,7 +7,7 @@ using Aws.GameLift.Realtime.Types;
 using Newtonsoft.Json;
 
 /**
- * @BatteryAcid
+ * @BatteryAcid, edited by Paul Davis
  * I've modified this example to demonstrate a simple two player card game.
  * 
  * The base code is sourced from the AWS GameLift Docs: 
@@ -32,13 +32,18 @@ public class RealTimeClient
     public event EventHandler<RemotePlayerIdEventArgs> RemotePlayerIdEventHandler;
     public event EventHandler<GameOverEventArgs> GameOverEventHandler;
 
-    private enum OpCodes
+    public enum GameLiftOpCodes
     {
         PlayerAccepted = 113,
         GameStart = 201,
         GameOver = 209,
         PlayCard = 300,
         DrawCardAck = 301
+    }
+
+    public enum LambdaOpCodes
+    {
+        RequestFindMatch = 1
     }
 
     /// <summary>
@@ -85,7 +90,7 @@ public class RealTimeClient
         // handle message based on OpCode
         switch (e.OpCode)
         {
-            case (int)OpCodes.PlayerAccepted:
+            case (int)GameLiftOpCodes.PlayerAccepted:
                 // This tells our client that the player has been accepted into the Game Session as a new player session.
                 Debug.Log("Player accepted into game session!");
 
@@ -96,7 +101,7 @@ public class RealTimeClient
 
                 break;
 
-            case (int)OpCodes.GameStart:
+            case (int)GameLiftOpCodes.GameStart:
                 // The game start op tells our game clients that all players have joined and the game should start
                 Debug.Log("Start game op received...");
 
@@ -112,7 +117,7 @@ public class RealTimeClient
 
                 break;
 
-            case (int)OpCodes.GameOver:
+            case (int)GameLiftOpCodes.GameOver:
                 // gives us the match results
                 Debug.Log("Game over op...");
                 

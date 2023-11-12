@@ -1,3 +1,5 @@
+// Based on code written by Battery Acid Dev, edited by Paul DAvis
+
 using UnityEngine;
 using UnityEngine.Networking;
 using System.Threading.Tasks;

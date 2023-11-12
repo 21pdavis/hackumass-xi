@@ -11,11 +11,11 @@ public class Menu : MonoBehaviour
         StartButton.onClick.AddListener(OnStartClick);
         ExitButton.onClick.AddListener(OnExitClick);
     }
-
+    
     private void OnStartClick()
     {
         gameObject.SetActive(false);
-        GameManager.Instance.TransitionState(GameManager.GameState.Searching);
+        GameManager.Instance.TransitionState(GameManager.GameState.Playing);
     }
 
     private void OnExitClick()

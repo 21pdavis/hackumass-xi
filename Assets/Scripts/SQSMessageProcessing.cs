@@ -166,12 +166,12 @@ public class SQSMessageProcessing : MonoBehaviour
 
     void Start()
     {
-        CognitoAWSCredentials credentials = new CognitoAWSCredentials(
-            IdentityPool, // Your Identity pool ID
-            RegionEndpoint.USEast1 // Your GameLift Region
-        );
+        //CognitoAWSCredentials credentials = new CognitoAWSCredentials(
+        //    IdentityPool, // Your Identity pool ID
+        //    Amazon.RegionEndpoint.GetBySystemName("us-east-1") // Your GameLift Region
+        //);
 
-        _sqsClient = new AmazonSQSClient(credentials, Amazon.RegionEndpoint.USEast1);
+        //_sqsClient = new AmazonSQSClient(credentials, Amazon.RegionEndpoint.USEast1);
     }
 
     private static string ParseGameSessionIdFromArn(string gameSessionArn)
