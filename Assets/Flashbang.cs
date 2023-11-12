@@ -21,7 +21,7 @@ public class Flashbang : MonoBehaviour
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.Space)) {
-            a = 10
+            a = 10;
             Flash();
         }
         // GetComponent<Renderer>().material.color.a=Time.time-Mathf.Floor(Time.time);
