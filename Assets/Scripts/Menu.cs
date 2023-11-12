@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MenuManager : MonoBehaviour
+public class Menu : MonoBehaviour
 {
     [SerializeField]
     private Button StartButton, ExitButton;
@@ -14,7 +14,7 @@ public class MenuManager : MonoBehaviour
 
     private void OnStartClick()
     {
-        //gameObject.SetActive(false);
+        gameObject.SetActive(false);
         GameManager.Instance.TransitionState(GameManager.GameState.Searching);
     }
 
