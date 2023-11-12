@@ -33,8 +33,4 @@ public class Rbmovement : MonoBehaviour {
         // rb.velocity = direction * speed;
         rb.MovePosition((Vector2)transform.position + (direction * speed * Time.deltaTime));
     }
-
-    void quantumTunnel() {
-
-    }
 }
