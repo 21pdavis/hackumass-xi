@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using Aws.GameLift.Realtime.Types;
 using System.Net.Sockets;
 using System.Net;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -76,8 +77,9 @@ public class GameManager : MonoBehaviour
             //    FindMatch();
             //    break;
             case GameState.Playing:
-                Instantiate(player1, Vector2.zero, Quaternion.identity);
-                Instantiate(player2, new Vector2(1f, 0f), Quaternion.identity);
+                SceneManager.LoadScene("Ben");
+                //Instantiate(player1, Vector2.zero, Quaternion.identity);
+                //Instantiate(player2, new Vector2(1f, 0f), Quaternion.identity);
                 break;
 
         }
